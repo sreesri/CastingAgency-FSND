@@ -31,6 +31,6 @@ PRODUCER_TOKEN = os.getenv('PRODUCER_TOKEN')
 AUTH0_AUTHORIZE_URL = f'https://{APP_DOMAIN}/authorize?audience={API_IDENTIFIER}&response_type=token&client_id={CLIENT_ID}&redirect_uri={BASE_URL}{CALLBACK_URL}&prompt=login'
 
 # Connect to the database
-SQLALCHEMY_DATABASE_URI = f'postgresql://{USERNAME}:{PASSWORD}@{DATABASE_HOST}:{DATABASE_PORT}/{DATABASE_NAME}'
+SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:postgres@localhost:5432/castingAgency'
 SQLALCHEMY_TRACK_MODIFICATIONS = False
-DATABASE_URL = 'postgresql://postgres:postgres@localhost:5432/castingAgency'
+# DATABASE_URL = 'postgresql://postgres:postgres@localhost:5432/castingAgency'

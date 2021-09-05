@@ -1,4 +1,4 @@
-from config import ASSISTANT_TOKEN, DATABASE_URL, DIRECTOR_TOKEN, PASSWORD, TEST_DB_NAME, USERNAME
+from config import ASSISTANT_TOKEN,  DIRECTOR_TOKEN, PASSWORD, SQLALCHEMY_DATABASE_URI, TEST_DB_NAME, USERNAME
 import os
 import unittest
 import json
@@ -16,7 +16,7 @@ class CastingAgencyUnitTest(unittest.TestCase):
         self.database_name = TEST_DB_NAME
         database_user = USERNAME
         database_pass = PASSWORD
-        self.database_path = DATABASE_URL
+        self.database_path = SQLALCHEMY_DATABASE_URI
         setup_db(self.app, self.database_path)
 
         self.VALID_ACTOR = {
