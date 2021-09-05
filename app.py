@@ -23,7 +23,7 @@ def create_app():
     #----------------------------------------------------------------------------#
     # CORS Config.
     #----------------------------------------------------------------------------#
-    CORS(app)
+    CORS(app, resources={r"/*": {"origins": "*"}})
 
     @app.after_request
     def after_request(response):

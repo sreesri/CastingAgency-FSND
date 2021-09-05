@@ -11,14 +11,10 @@ def setup_db(app, database_path=database_path):
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = SQLALCHEMY_TRACK_MODIFICATIONS
     db.app = app
     db.init_app(app)
-    
-
 
 #----------------------------------------------------------------------------#
 # Models.
 #----------------------------------------------------------------------------#
-
-
 
 class Movie(db.Model):
     __tablename__ = "movie"
