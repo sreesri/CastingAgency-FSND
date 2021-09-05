@@ -5,7 +5,7 @@ import flask_sqlalchemy
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
 from flask import (Flask, render_template, request,abort,Response, flash, redirect, url_for)
-from models import setup_db, Actor, Movie
+from models import setup_db, Actor, Movie,db
 from flask_cors import CORS
 from models import *
 from config import AUTH0_AUTHORIZE_URL
