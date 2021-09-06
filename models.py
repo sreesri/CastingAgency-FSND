@@ -4,21 +4,17 @@ import os
 
 db = SQLAlchemy()
 
-database_path = os.environ['DATABASE_URL']
+database_path = os.environ['SQLALCHEMY_DATABASE_URI']
 
 def setup_db(app, database_path=database_path):
     app.config["SQLALCHEMY_DATABASE_URI"] = database_path
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = SQLALCHEMY_TRACK_MODIFICATIONS
     db.app = app
     db.init_app(app)
-    db.create_all()
-
 
 #----------------------------------------------------------------------------#
 # Models.
 #----------------------------------------------------------------------------#
-
-
 
 class Movie(db.Model):
     __tablename__ = "movie"
