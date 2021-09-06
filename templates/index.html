@@ -8,48 +8,6 @@
     <h1>CastingAgency</h1>
     <a href="{{AUTH0_AUTHORIZE_URL}}">Login</a>
     <p id='token'>{{token}}</p>
-    <div id="movies">
-        <form id="movieForm">
-            <input type="text" id="title" name="title" />
-            <input type="submit" value="add movie" />
-        </form>
-        <ul id="moviesList">
-            {% for movie in movies%}
-            <li>
-                <a href="/movies/{{movie.id}}">
-                    {{movie.title}}
-                </a>
-                {{movie.release_year}}
-
-                <button type="button" onclick="doMoviedelete({{movie.id}})" class='delete-button'>
-                    &cross;
-                </button>
-            </li>
-            {%endfor%}
-        </ul>
-    </div>
-
-    <div>
-        <form id="actorform">
-            <input type="text" id="title" name="title" />
-            <input type="submit" value="add movie" />
-        </form>
-        <ul id="moviesList">
-            {% for movie in movies%}
-            <li>
-                <a href="/movies/{{movie.id}}">
-                    {{movie.title}}
-                </a>
-                {{movie.release_year}}
-
-                <button type="button" onclick="doMoviedelete({{movie.id}})" class='delete-button'>
-                    &cross;
-                </button>
-            </li>
-            {%endfor%}
-        </ul>
-    </div>
-
 </body>
 
 <script>
@@ -57,7 +15,7 @@
     // check if the fragment includes the access token
     if (fragment[0] === 'access_token') {
         // add the access token to the jwt
-        document.getElementById('token').innerHTML=fragment[1];
+        document.getElementById('token').innerHTML = fragment[1];
     }
 
 </script>
